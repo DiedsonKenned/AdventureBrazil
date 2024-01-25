@@ -12,6 +12,7 @@
     {"name":"entidades","order":7,"path":"folders/Objetos/entidades.yy",},
     {"name":"inimigos","order":1,"path":"folders/Objetos/entidades/inimigos.yy",},
     {"name":"slime","order":4,"path":"folders/Objetos/entidades/inimigos/slime.yy",},
+    {"name":"player_plataforma","order":2,"path":"folders/Objetos/entidades/player_plataforma.yy",},
     {"name":"Fontes de Luz","order":6,"path":"folders/Objetos/Fontes de Luz.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
@@ -32,9 +33,8 @@
     {"name":"player atack","order":9,"path":"folders/Sprites/player/player atack.yy",},
     {"name":"player idle","order":7,"path":"folders/Sprites/player/player idle.yy",},
     {"name":"player walk","order":8,"path":"folders/Sprites/player/player walk.yy",},
-    {"name":"tiles","order":2,"path":"folders/Sprites/tiles.yy",},
     {"name":"player_plataforma","order":10,"path":"folders/Sprites/player/player_plataforma.yy",},
-    {"name":"player_plataforma","order":2,"path":"folders/Objetos/entidades/player_plataforma.yy",},
+    {"name":"tiles","order":2,"path":"folders/Sprites/tiles.yy",},
     {"name":"tile_plataforma","order":3,"path":"folders/Sprites/tiles/tile_plataforma.yy",},
   ],
   "ResourceOrderSettings": [
