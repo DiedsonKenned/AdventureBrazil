@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_inimigo_hurt_efc",
   "bbox_bottom": 21,
-  "bbox_left": 0,
+  "bbox_left": 7,
   "bbox_right": 24,
   "bbox_top": 0,
   "bboxMode": 0,

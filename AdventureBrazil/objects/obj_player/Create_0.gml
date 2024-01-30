@@ -1,13 +1,37 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+max_vida = 5;
+vida = max_vida;
+poise_max = 5;
+poise = poise_max;
+dead = false;
 
 
 meu_dano = noone;
 dano_poise = 9;
+score = 0;
+imageindex = 0;
 
 estado_idle = new estado();
 estado_walk = new estado();
 estado_atack = new estado();
+estado_hurt = new estado();
+estado_death = new estado();
+
+lida_dano = function(_dano = 1, _poise = 1){
+	vida -= _dano;
+	poise = max(poise - _poise, 0);
+	
+	if(vida <= 0 && estado_atual != estado_death){
+		troca_estado(estado_death);
+		return;
+	}
+	
+	if(poise <= 0 or estado_atual != estado_atack){
+		troca_estado(estado_hurt);
+	}
+	
+}
 
 
 #region estado_idle
@@ -28,6 +52,9 @@ estado_idle.roda = function()
 	if(atack)
 	{
 		troca_estado(estado_atack);
+	}
+	if (keyboard_check_released(ord("H"))){
+		troca_estado(estado_hurt);
 	}
 }
 
@@ -112,5 +139,55 @@ vel = 2;
 dir = 0;
 
 #endregion
+#region estado_hurt
+estado_hurt.inicia = function(){
+	sprite_index=define_sprite(dir, spr_player_hurt_side, spr_player_hurt_front, spr_player_hurt_back);
+	image_index = 0;
+	
+	velh = 0;
+	velv = 0;
+	
+	imageindex = 0;
+	obj_screenshake.ang = 5;
+	obj_screenshake.valor +=20;
+}
+estado_hurt.roda = function(){
+	if(image_index > imageindex){
+		imageindex = image_index;
+	}
+	if(imageindex > image_index){
+		troca_estado(estado_idle);
+	}
+}
+#endregion
 
+#region estado death
+estado_death.inicia = function(){
+	sprite_index = spr_player_death;
+	image_index = 0;
+}
+estado_death.roda = function(){
+	if(image_index > imageindex){
+		imageindex = image_index
+	}
+	if(imageindex > image_index){
+		
+		image_index = image_number-1;
+		
+		if(global.game_over == false){
+			
+			var _cam_x = camera_get_view_x(view_camera[0]);
+			var _cam_y = camera_get_view_y(view_camera[0]);
+			
+			layer_sequence_create("sequencia", _cam_x, _cam_y, sq_morreu);
+			global.game_over = true;
+		}
+	}
+	
+	
+}
+estado_death.finaliza = function(){
+	
+}
+#endregion
 inicia_estado(estado_idle);

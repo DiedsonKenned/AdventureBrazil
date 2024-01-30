@@ -26,7 +26,7 @@ for(var i = 0; i < op_max; i++)
 		draw_set_color(c_green);
 		index = i;
 		if(mouse_check_button_pressed(mb_left)){
-			if(index == 1){
+			if(index == 0){
 				room_goto_next();
 			}
 			if(index == 3){

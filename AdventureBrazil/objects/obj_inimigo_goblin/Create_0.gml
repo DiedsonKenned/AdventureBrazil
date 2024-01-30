@@ -3,17 +3,28 @@
 // Inherit the parent event
 tempo_estado = game_get_speed(gamespeed_fps)*2;
 timer_estado = tempo_estado;
+dano = noone;
+dano_valor = 1;
+sprite = 
+{
+	attack : spr_inimigo_atack,
+	death : spr_inimigo_death,
+	hurt : spr_inimigo_hurt_efc,
+	idle : spr_inimigo_idle_front,
+	walk : spr_inimigo_walk
+};
+
 
 destinox = 0;
 destinoy = 0;
 alvo = noone;
-	
+dir = 0;
 event_inherited();
 
 #region estado_idle
 	estado_idle.inicia = function()
 	{
-		sprite_index = spr_inimigo_idle_front;
+		sprite_index = sprite.idle;
 		image_index = 0;
 		timer_estado = tempo_estado;
 		
@@ -40,7 +51,7 @@ event_inherited();
 #region estado_walk
 	estado_walk.inicia = function()
 	{
-		sprite_index = spr_inimigo_walk;
+		sprite_index = sprite.walk;
 		image_index = 0;
 		
 		timer_estado = tempo_estado;
@@ -74,7 +85,7 @@ event_inherited();
 
 	estado_hunt.inicia = function()
 	{
-		sprite_index = spr_inimigo_walk;
+		sprite_index = sprite.walk;
 		image_index = 0;
 		
 		if(instance_exists(obj_player))
@@ -97,7 +108,7 @@ event_inherited();
 		
 		var _dist = point_distance(x, y , alvo.x, alvo.y);
 		
-		if(_dist <= 15)
+		if(_dist <= 10)
 		{
 			troca_estado(estado_attack);
 		}
@@ -121,7 +132,7 @@ event_inherited();
 				if(_goblin.alvo != alvo)
 				{
 					var _disti = point_distance( x, y , _goblin.x, _goblin.y);
-					if(_disti < 100)
+					if(_disti < 30)
 					{
 							with(_goblin)
 						{
@@ -140,12 +151,19 @@ event_inherited();
 #region estado_ataque
 	estado_attack.inicia = function()
 	{
-		sprite_index = spr_inimigo_atack;
+		sprite_index = sprite.attack;
 		image_index = 0;
+		
 	}
 	estado_attack.roda = function()
 	{
-		if(image_index >= image_number * .5)
+		
+		if(dano == noone && image_index >= 7)
+		{
+			dano = instance_create_depth(x, y, depth, obj_dano_inimigo);
+			dano.dano = dano_valor
+		}
+		if(image_index >= image_number - .5)
 		{
 			troca_estado(estado_idle);
 		}
@@ -153,6 +171,11 @@ event_inherited();
 	estado_attack.finaliza = function()
 	{
 		alvo = noone;
+		
+		if(instance_exists(dano)){
+			instance_destroy(dano);
+		}
+		dano = noone;
 	}
 
 #endregion
@@ -160,7 +183,7 @@ event_inherited();
 #region estado_hurt
 	estado_hurt.inicia = function()
 	{
-		sprite_index = spr_inimigo_hurt_efc;
+		sprite_index = sprite. hurt;
 		image_index = 0;
 		
 

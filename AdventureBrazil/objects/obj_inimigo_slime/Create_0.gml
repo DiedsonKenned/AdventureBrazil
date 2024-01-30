@@ -5,7 +5,7 @@ tempo_estado = game_get_speed(gamespeed_fps)*15;
 timer_estado = tempo_estado;
 
 range = 10;
-
+dano = noone;
 sprite = 
 {
 	attack : spr_slime_attack,
@@ -145,7 +145,12 @@ event_inherited();
 	}
 	estado_attack.roda = function()
 	{
-		if(image_index >= image_number * .5)
+		if(dano == noone && image_index >= 7)
+		{
+			dano = instance_create_depth(x,y, depht,obj_dano_inimigo);
+		}
+		
+		if(image_index >= image_number - .5)
 		{
 			troca_estado(estado_idle);
 		}
