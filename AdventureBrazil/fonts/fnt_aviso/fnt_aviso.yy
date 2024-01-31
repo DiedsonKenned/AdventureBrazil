@@ -32,7 +32,7 @@
   "ranges": [
     {"lower":33,"upper":33,},
   ],
-  "regenerateBitmap": true,
+  "regenerateBitmap": false,
   "sampleText": "!!!!!!!!!",
   "sdfSpread": 8,
   "size": 20.0,

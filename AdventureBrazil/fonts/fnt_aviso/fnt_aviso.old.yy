@@ -4,7 +4,7 @@
   "name": "fnt_aviso",
   "AntiAlias": 1,
   "applyKerning": 0,
-  "ascender": 36,
+  "ascender": 24,
   "ascenderOffset": 0,
   "bold": true,
   "canGenerateBitmap": true,
@@ -13,8 +13,8 @@
   "fontName": "Century725 Cn BT",
   "glyphOperations": 0,
   "glyphs": {
-    "32": {"character":32,"h":52,"offset":0,"shift":9,"w":9,"x":2,"y":2,},
-    "33": {"character":33,"h":52,"offset":3,"shift":11,"w":21,"x":13,"y":2,},
+    "32": {"character":32,"h":40,"offset":0,"shift":6,"w":6,"x":2,"y":2,},
+    "33": {"character":33,"h":40,"offset":2,"shift":7,"w":20,"x":10,"y":2,},
   },
   "hinting": 0,
   "includeTTF": false,
@@ -22,7 +22,7 @@
   "italic": true,
   "kerningPairs": [],
   "last": 0,
-  "lineHeight": 48,
+  "lineHeight": 32,
   "maintainGms1Font": false,
   "parent": {
     "name": "Fontes",
@@ -32,10 +32,10 @@
   "ranges": [
     {"lower":33,"upper":33,},
   ],
-  "regenerateBitmap": false,
+  "regenerateBitmap": true,
   "sampleText": "!!!!!!!!!",
   "sdfSpread": 8,
-  "size": 30.0,
+  "size": 20.0,
   "styleName": "Regular",
   "textureGroupId": {
     "name": "Default",

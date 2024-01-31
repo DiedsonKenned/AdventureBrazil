@@ -9,5 +9,5 @@ obj_screenshake.valor += 2;
 
 with(other)
 {
-	lida_dano(other.dano+2);
+	lida_dano(other.dano);
 }

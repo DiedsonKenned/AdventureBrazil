@@ -1,8 +1,10 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+velh = 0;
+velv = 0;
+vel = 5;
+grav = .3;
 
-spd = 5;
-hspd= 0;
-vspd = 0;
-grv = 0.4;
-
+inputs ={
+	left    : ord("A"),
+	right   : ord("D"),
+	jump    : vk_space
+};

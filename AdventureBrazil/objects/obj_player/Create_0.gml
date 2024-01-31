@@ -8,7 +8,7 @@ dead = false;
 
 
 meu_dano = noone;
-dano_poise = 9;
+dano_poise = 5;
 score = 0;
 imageindex = 0;
 
@@ -53,9 +53,7 @@ estado_idle.roda = function()
 	{
 		troca_estado(estado_atack);
 	}
-	if (keyboard_check_released(ord("H"))){
-		troca_estado(estado_hurt);
-	}
+	
 }
 
 #endregion

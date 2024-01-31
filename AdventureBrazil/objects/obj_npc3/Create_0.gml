@@ -4,7 +4,7 @@
 questionList = [
     ["Quais são alguns animais icônicos da fauna amazônica encontrados na Região Norte?", "Boto-cor-de-rosa"],
     ["Qual o produto agrícola mais consumido?", "Açaí"],
-	["Qual é o parque nacional do Amazonas", "Pico da Neblina"]];
+	["Qual é o parque nacional do Amazonas?", "Pico da Neblina"]];
 interacted = false;
 score = 0;
 lastInteractionTime = 0;

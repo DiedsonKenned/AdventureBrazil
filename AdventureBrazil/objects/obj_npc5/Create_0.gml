@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 questionList = [
-    ["Quais são alguns animais icônicos da fauna amazônica encontrados na Região Norte?", "Boto-cor-de-rosa"],
+    ["Quais são alguns animais icônicos da fauna amazônica encontrados na Região Norte com a cor rosa?", "Boto-cor-de-rosa"],
     ["Qual o produto agrícola mais consumido?", "Açaí"],
 	["Nome da maior ilha fluvial do mundo?", "Ilha de Marajó"]];
 interacted = false;

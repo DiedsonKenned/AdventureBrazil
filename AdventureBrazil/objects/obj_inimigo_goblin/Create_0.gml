@@ -108,7 +108,7 @@ event_inherited();
 		
 		var _dist = point_distance(x, y , alvo.x, alvo.y);
 		
-		if(_dist <= 10)
+		if(_dist <= 15)
 		{
 			troca_estado(estado_attack);
 		}
@@ -132,7 +132,7 @@ event_inherited();
 				if(_goblin.alvo != alvo)
 				{
 					var _disti = point_distance( x, y , _goblin.x, _goblin.y);
-					if(_disti < 30)
+					if(_disti < 50)
 					{
 							with(_goblin)
 						{

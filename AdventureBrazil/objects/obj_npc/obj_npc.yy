@@ -15,10 +15,7 @@
     "name": "Objetos",
     "path": "folders/Objetos.yy",
   },
-  "parentObjectId": {
-    "name": "obj_decoracao_pai",
-    "path": "objects/obj_decoracao_pai/obj_decoracao_pai.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -33,7 +30,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
+  "solid": true,
   "spriteId": {
     "name": "spr_npc",
     "path": "sprites/spr_npc/spr_npc.yy",

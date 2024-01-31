@@ -3,7 +3,12 @@
 
 var player = instance_nearest(x, y, obj_player); // Substitua "obj_player" pelo nome do objeto do jogador
 
-if (player != noone && point_distance(x, y, player.x, player.y) <= interactionDistance) {
+if (player != noone && point_distance(x, y, player.x, player.y)  <= interactionDistance) {
+	cria_aviso = function ()
+	{
+		var _aviso = instance_create_depth(x, y, depth, obj_aviso_interacao);
+		_aviso.pai = id;
+	}
     if (!interacted && current_time - lastInteractionTime >= 100 * room_speed) {
         questionIndex = irandom(array_length_1d(questionList) - 1);
         show_message(questionList[questionIndex][0]);
@@ -16,7 +21,6 @@ if (player != noone && point_distance(x, y, player.x, player.y) <= interactionDi
         } else {
             show_message("Resposta incorreta. Este NPC ficará bloqueado por 60 segundos.");
             lastInteractionTime = current_time;
-			score -= 1;
         }
 		if(score <= 0){
 			score = 0;
